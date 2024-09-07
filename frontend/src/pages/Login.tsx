@@ -40,8 +40,8 @@ const Login = () => {
   }
 
   return (
-    <div className="absolute top-0 left-0 right-0 bottom-0 grid place-items-center mx-2">
-      <div className="bg-white p-8 rounded-lg w-96">
+    <div className="absolute top-0 left-0 right-0 bottom-0 grid place-items-center mx-2 pointer-events-none">
+      <div className="bg-white p-8 rounded-lg max-w-96 pointer-events-auto">
         <h2 className="text-2xl font-semibold -ml-2 mb-4">Admin Login</h2>
         <label
           htmlFor="username"

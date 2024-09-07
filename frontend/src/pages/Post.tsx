@@ -34,13 +34,12 @@ const Post = () => {
   const dateString = formatDate(post.created_at);
 
   return (
-    <div className="bg-white rounded-xl shadow p-6 w-fit mx-auto">
-      <div className="flex gap-2 w-full mb-4">
+    <div className="bg-white rounded-xl shadow p-4 w-fit sm:mx-auto mx-2">
+      <div className="flex gap-2 w-full mb-4 sm:flex-row flex-col">
         <div>
           <h1 className="font-semibold text-2xl uppercase">{post.title}</h1>
           <p className="font-light">{dateString}</p>
         </div>
-
         {token && (
           <div className="flex gap-1 h-fit">
             <span
@@ -63,16 +62,16 @@ const Post = () => {
             </span>
           </div>
         )}
-        <p className="rounded-xl px-2 py-1 bg-secondary text-white uppercase h-fit font-semibold ml-auto">
+        <p className="rounded-xl px-2 py-1 bg-secondary text-white uppercase h-fit font-semibold sm:ml-auto w-fit">
           {post.type}
         </p>
       </div>
-      <p className="prose whitespace-pre-wrap">{post.content}</p>
+      <p className="sm:prose prose-sm whitespace-pre-wrap">{post.content}</p>
       <div className="flex flex-wrap gap-2 mt-4">
         {post.tags &&
           post.tags.split(",").map((tag) => (
             <span
-              className="rounded-xl px-2 py-1 bg-primary text-white uppercase h-fit font-semibold"
+              className="rounded-xl px-2 py-1 bg-primary text-white uppercase h-fit font-semibold text-sm"
               key={tag}
             >
               {tag}
