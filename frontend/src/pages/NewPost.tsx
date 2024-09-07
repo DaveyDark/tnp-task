@@ -65,8 +65,8 @@ const NewPost = ({ existing }: NewPostProps) => {
   }, []);
 
   return (
-    <div className="w-full px-2 mx-auto flex-grow flex flex-col">
-      <div className="flex flex-col max-w-screen-sm gap-4 h-fit bg-white rounded-xl shadow p-6">
+    <div className="w-full px-2 mx-auto flex-grow flex flex-col items-center">
+      <div className="flex flex-col max-w-screen-sm w-full gap-4 h-fit bg-white rounded-xl shadow p-6">
         <h2 className="text-xl">
           {existing ? "Edit post" : "Create a new post"}
         </h2>
