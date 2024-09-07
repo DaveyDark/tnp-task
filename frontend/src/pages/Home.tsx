@@ -22,7 +22,13 @@ const Home = () => {
         `${import.meta.env.VITE_API_URL}/posts?page=${page}&perPage=${PAGE_SIZE}`,
       );
       const data = res.data.data;
-      setPosts((prevPosts) => [...prevPosts, ...data]);
+      setPosts((prevPosts) => {
+        // Avoid appending duplicate posts by checking if they already exist in the state
+        const newPosts = data.filter(
+          (newPost: Post) => !prevPosts.some((post) => post.id === newPost.id),
+        );
+        return [...prevPosts, ...newPosts];
+      });
       setHasMore(res.data.current_page < res.data.last_page);
     } catch (err) {
       console.error(err);
